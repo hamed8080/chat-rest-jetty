@@ -1,0 +1,22 @@
+.idea
+*.out
+target
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+**/.idea
+**/.mvn
+.mvn
+.target
+**/.target
+out/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
