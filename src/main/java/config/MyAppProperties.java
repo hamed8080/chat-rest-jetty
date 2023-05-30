@@ -36,6 +36,7 @@ public class MyAppProperties {
     private Long maxReconnectCount = 5L;
     private Long reconnectInterval = 5000L;
     private Long asyncCheckConnectionLastMessageInterval = 5000L;
+    private int serverPort = 9090;
 
     public String getPlatformHost() {
         return platformHost;
@@ -203,6 +204,14 @@ public class MyAppProperties {
 
     public void setAsyncCheckConnectionLastMessageInterval(Long asyncCheckConnectionLastMessageInterval) {
         this.asyncCheckConnectionLastMessageInterval = asyncCheckConnectionLastMessageInterval;
+    }
+
+    public int getServerPort() {
+        return serverPort;
+    }
+
+    public void setServerPort(int serverPort) {
+        this.serverPort = serverPort;
     }
 
     public static MyAppProperties loadResourceConfig() throws IOException, NullPointerException {

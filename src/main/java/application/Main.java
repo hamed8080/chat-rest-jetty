@@ -18,7 +18,8 @@ public class Main {
         MyAppProperties config = MyAppProperties.loadExternalConfig() != null ? MyAppProperties.loadExternalConfig() : MyAppProperties.loadResourceConfig();
         chatManager = new ChatManager(config);
         System.out.println("**********************************");
-        Server server = new Server(9090);
+        assert config != null;
+        Server server = new Server(config.getServerPort());
         ServletContextHandler context = new ServletContextHandler();
         context.setContextPath("/");
         ServletHolder messageHolder = context.addServlet(MessageServlet.class,"/message");

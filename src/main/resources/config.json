@@ -1,7 +1,7 @@
 {
     "platformHost": "https://sandbox.pod.ir:8043",
     "socketAddress": "wss://msg.pod.ir/ws",
-    "token": "b6a0dad5472145748109549ebd8c568b.XzIwMjM1",
+    "token": "e921038e7abc41eab9cca8a3d9496165.XzIwMjM1",
     "ssoHost": "http://172.16.110.235",
     "fileServer": "https://core.pod.ir",
     "serverName": "chatlocal",
@@ -17,5 +17,6 @@
     "appId": "4101",
     "maxReconnectCount": 5,
     "reconnectInterval": 5000,
-    "asyncCheckConnectionLastMessageInterval": 5000
+    "asyncCheckConnectionLastMessageInterval": 5000,
+    "serverPort": 9090
 }
