@@ -7,6 +7,7 @@ import chatSdk.dataTransferObject.message.inPut.Message;
 import chatSdk.dataTransferObject.message.outPut.SendMessageRequest;
 import com.google.gson.Gson;
 import servlets.dto.MessageRequest;
+import sun.misc.IOUtils;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
@@ -32,7 +33,7 @@ public class MessageServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        byte[] bytes = request.getInputStream().readAllBytes();
+        byte[] bytes = IOUtils.readAllBytes(request.getInputStream());
         String jsonContent = new String(bytes);
         MessageRequest msg = new Gson().fromJson(jsonContent, MessageRequest.class);
         sendAsyncMessage(request, response, msg.getMessage(), msg.getThreadId());

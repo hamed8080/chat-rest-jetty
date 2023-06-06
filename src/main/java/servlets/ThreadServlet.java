@@ -6,6 +6,7 @@ import chatSdk.dataTransferObject.ChatResponse;
 import chatSdk.dataTransferObject.thread.inPut.Conversation;
 import chatSdk.dataTransferObject.thread.outPut.GetThreadRequest;
 import com.google.gson.Gson;
+import sun.misc.IOUtils;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
@@ -31,7 +32,7 @@ public class ThreadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        byte[] bytes = request.getInputStream().readAllBytes();
+        byte[] bytes = IOUtils.readAllBytes(request.getInputStream());
         String jsonContent = new String(bytes);
         GetThreadRequest msg = new Gson().fromJson(jsonContent, GetThreadRequest.class);
         getThreadsAsync(request, response, msg.getCount(), msg.getOffset());
