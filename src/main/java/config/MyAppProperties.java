@@ -222,12 +222,13 @@ public class MyAppProperties {
         return new Gson().fromJson(fileContent, MyAppProperties.class);
     }
 
-    public static MyAppProperties loadExternalConfig() throws IOException, URISyntaxException, InvalidPathException {
-        Path jarDirPath = Paths.get(Main.class.getProtectionDomain()
-                .getCodeSource()
-                .getLocation()
-                .toURI()).getParent();
-        Path path = Paths.get(jarDirPath.toUri().resolve( "config.json"));
+    public static MyAppProperties loadExternalConfig(String jsonConfigFilePath) throws IOException, URISyntaxException, InvalidPathException {
+//        Path jarDirPath = Paths.get(Main.class.getProtectionDomain()
+//                .getCodeSource()
+//                .getLocation()
+//                .toURI()).getParent();
+//        Path path = Paths.get(jarDirPath.toUri().resolve( "config.json"));
+        Path path = Paths.get(jsonConfigFilePath);
         if (!Files.exists(path)) { return null;}
         byte[] externalConfigContent = Files.readAllBytes(path);
         String fileContent = new String(externalConfigContent);

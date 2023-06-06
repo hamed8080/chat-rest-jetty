@@ -1,7 +1,7 @@
 {
     "platformHost": "https://sandbox.pod.ir:8043",
     "socketAddress": "wss://msg.pod.ir/ws",
-    "token": "1e178c1c7e5e461694811b8cf35a7b2e.XzIwMjM2",
+    "token": "1b8fe83d67914b49aeede808c798262d.XzIwMjM2",
     "ssoHost": "http://172.16.110.235",
     "fileServer": "https://core.pod.ir",
     "serverName": "chatlocal",
@@ -14,7 +14,7 @@
     "queuePassword": "royLhAvLRdG1lObqPcprODFwm",
     "isSocket": true,
     "isLoggable": true,
-    "appId": "4101",
+    "appId": "PodChat",
     "maxReconnectCount": 5,
     "reconnectInterval": 5000,
     "asyncCheckConnectionLastMessageInterval": 5000,
