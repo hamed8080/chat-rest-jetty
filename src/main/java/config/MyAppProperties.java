@@ -3,7 +3,7 @@ package config;
 
 import application.Main;
 import com.google.gson.Gson;
-import sun.misc.IOUtils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -220,7 +220,7 @@ public class MyAppProperties {
         InputStream inputStream = Main.class.getResourceAsStream("/config.json");
         byte[] resourceFileBytes = new byte[0];
         if (inputStream != null) {
-            resourceFileBytes = IOUtils.readAllBytes(inputStream);
+            resourceFileBytes = IOUtils.toByteArray(inputStream);
         }
         String fileContent = new String(resourceFileBytes);
         return new Gson().fromJson(fileContent, MyAppProperties.class);
@@ -231,7 +231,7 @@ public class MyAppProperties {
                 .getCodeSource()
                 .getLocation()
                 .toURI()).getParent();
-        Path path = Paths.get(jarDirPath.toUri().getPath() + "config.json");
+        Path path = Paths.get(jarDirPath.toUri().resolve( "config.json"));
         if (!Files.exists(path)) { return null;}
         byte[] externalConfigContent = Files.readAllBytes(path);
         String fileContent = new String(externalConfigContent);
