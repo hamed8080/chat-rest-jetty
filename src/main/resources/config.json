@@ -1,7 +1,7 @@
 {
     "platformHost": "https://sandbox.pod.ir:8043",
     "socketAddress": "wss://msg.pod.ir/ws",
-    "token": "e921038e7abc41eab9cca8a3d9496165.XzIwMjM1",
+    "token": "1e178c1c7e5e461694811b8cf35a7b2e.XzIwMjM2",
     "ssoHost": "http://172.16.110.235",
     "fileServer": "https://core.pod.ir",
     "serverName": "chatlocal",
@@ -12,7 +12,7 @@
     "queueOutput": "queue-out-chat-java-local",
     "queueUserName": "root",
     "queuePassword": "royLhAvLRdG1lObqPcprODFwm",
-    "isSocket": false,
+    "isSocket": true,
     "isLoggable": true,
     "appId": "4101",
     "maxReconnectCount": 5,

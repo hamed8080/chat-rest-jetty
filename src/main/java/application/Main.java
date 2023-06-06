@@ -1,5 +1,6 @@
 package application;
 
+import config.LoggerContextConfiguration;
 import config.MyAppProperties;
 import servlets.ConnectionStatusServlet;
 import servlets.MessageServlet;
@@ -18,6 +19,7 @@ public class Main {
         MyAppProperties config = MyAppProperties.loadExternalConfig() != null ? MyAppProperties.loadExternalConfig() : MyAppProperties.loadResourceConfig();
         chatManager = new ChatManager(config);
         System.out.println("**********************************");
+        LoggerContextConfiguration.config(config.getIsLoggable());
         assert config != null;
         Server server = new Server(config.getServerPort());
         ServletContextHandler context = new ServletContextHandler();

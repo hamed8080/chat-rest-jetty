@@ -164,10 +164,6 @@ public class MyAppProperties {
         isLoggable = loggable;
     }
 
-    public Boolean getLoggable() {
-        return isLoggable;
-    }
-
     public String getAppId() {
         return appId;
     }
