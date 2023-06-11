@@ -37,6 +37,7 @@ public class MyAppProperties {
     private Long chatId;
     private Long maxReconnectCount = 5L;
     private Long reconnectInterval = 5000L;
+    private Long ttl = 10000L;
     private Long asyncCheckConnectionLastMessageInterval = 5000L;
     private int serverPort = 9090;
 
@@ -208,6 +209,14 @@ public class MyAppProperties {
         return serverPort;
     }
 
+    public Long getTtl() {
+        return ttl;
+    }
+
+    public void setTtl(Long ttl) {
+        this.ttl = ttl;
+    }
+
     public void setServerPort(int serverPort) {
         this.serverPort = serverPort;
     }
@@ -223,11 +232,6 @@ public class MyAppProperties {
     }
 
     public static MyAppProperties loadExternalConfig(String jsonConfigFilePath) throws IOException, URISyntaxException, InvalidPathException {
-//        Path jarDirPath = Paths.get(Main.class.getProtectionDomain()
-//                .getCodeSource()
-//                .getLocation()
-//                .toURI()).getParent();
-//        Path path = Paths.get(jarDirPath.toUri().resolve( "config.json"));
         Path path = Paths.get(jsonConfigFilePath);
         if (!Files.exists(path)) { return null;}
         byte[] externalConfigContent = Files.readAllBytes(path);

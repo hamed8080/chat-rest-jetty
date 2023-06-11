@@ -59,6 +59,7 @@ public class ChatManager implements ChatListener {
                 .isLoggable(appProperties.getIsLoggable())
                 .maxReconnectCount(appProperties.getMaxReconnectCount())
                 .reconnectInterval(appProperties.getReconnectInterval())
+                .ttl(appProperties.getTtl())
                 .build();
         System.out.println("token is " + appProperties.getToken());
         try {

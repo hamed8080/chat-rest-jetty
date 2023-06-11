@@ -19,9 +19,8 @@ public class Main {
         System.out.println(args.toString());
         if (args.length == 0) { throw  new Exception("You must set a config json file path.");}
         MyAppProperties config = MyAppProperties.loadExternalConfig(args[0]);
-        chatManager = new ChatManager(config);
-        System.out.println("**********************************");
         LoggerContextConfiguration.config(config.getIsLoggable());
+        chatManager = new ChatManager(config);
         assert config != null;
         Server server = new Server(config.getServerPort());
         ServletContextHandler context = new ServletContextHandler();
